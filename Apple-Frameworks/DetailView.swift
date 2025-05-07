@@ -7,12 +7,25 @@
 import SwiftUI
 
 struct DetailView:View{
+    var framework:Framework
     var body:some View{
-        Text("hello world")
+        VStack{
+            Spacer()
+            FrameworkTitleView(framework: framework)
+            Text(framework.description)
+                .font(.body)
+                .padding()
+            Spacer()
+            Button{
+                print("tapped")
+            } label: {
+                AFButton(title: "Learn More")
+            }
+        }
     }
 }
 
 #Preview(){
- DetailView()
+    DetailView(framework: MockData.sampleFramework)
 }
 
