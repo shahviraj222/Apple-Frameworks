@@ -10,6 +10,18 @@ struct DetailView:View{
     var framework:Framework
     var body:some View{
         VStack{
+            HStack{
+                Spacer()
+                Button{
+                    
+                } label:{
+                    Image(systemName: "xmark")
+                        .foregroundColor(Color(.label)) //                lable is system color that adpats according to the them
+                        .imageScale(.large)
+                        .frame(width:44, height: 44)//                making touch target more wider
+                }
+            }.padding()
+
             Spacer()
             FrameworkTitleView(framework: framework)
             Text(framework.description)
