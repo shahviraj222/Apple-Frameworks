@@ -8,12 +8,13 @@ import SwiftUI
 
 struct DetailView:View{
     var framework:Framework
+    @Binding var isShowingDetailView:Bool
     var body:some View{
         VStack{
             HStack{
                 Spacer()
                 Button{
-                    
+                    isShowingDetailView = false
                 } label:{
                     Image(systemName: "xmark")
                         .foregroundColor(Color(.label)) //                lable is system color that adpats according to the them
@@ -38,6 +39,6 @@ struct DetailView:View{
 }
 
 #Preview(){
-    DetailView(framework: MockData.sampleFramework)
+    DetailView(framework: MockData.sampleFramework, isShowingDetailView: .constant(false))
 }
 
